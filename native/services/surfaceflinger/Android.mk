@@ -17,8 +17,8 @@ ifneq ($(TARGET_QCOM_DISPLAY_VARIANT),)
     LOCAL_C_INCLUDES        += hardware/qcom/display-$(TARGET_QCOM_DISPLAY_VARIANT)/libgralloc
     LOCAL_C_INCLUDES        += hardware/qcom/display-$(TARGET_QCOM_DISPLAY_VARIANT)/libqdutils
 else
-    LOCAL_C_INCLUDES += hardware/qcom/display/libgralloc
-    LOCAL_C_INCLUDES += hardware/qcom/display/libqdutils
+    LOCAL_C_INCLUDES += hardware/qcom/display/msm8974/libgralloc
+    LOCAL_C_INCLUDES += hardware/qcom/display/msm8974/libqdutils
 endif
 
 LOCAL_SHARED_LIBRARIES          := libsurfaceflinger libui libgui \
