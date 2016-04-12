@@ -21,9 +21,14 @@ else
     LOCAL_C_INCLUDES += hardware/qcom/display/libqdutils
 endif
 
-LOCAL_SHARED_LIBRARIES          := libsurfaceflinger libui libgui libqdutils \
+LOCAL_SHARED_LIBRARIES          := libsurfaceflinger libui libgui \
                                    libbinder libutils libcutils \
                                    libandroid
+
+ifeq ($(TARGET_USES_QCOM_BSP),true)
+    LOCAL_CFLAGS                += -DQTI_BSP
+    LOCAL_SHARED_LIBRARIES      += libqdutils
+endif
 
 LOCAL_SRC_FILES                 := ExLayer.cpp \
                                    ExSurfaceFlinger.cpp \
